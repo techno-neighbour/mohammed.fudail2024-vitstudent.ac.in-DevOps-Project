@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- ========================== -->
+    <!-- NAVBAR                     -->
+    <!-- ========================== -->
+    <nav class="navbar">
+        <div class="nav-brand">MyPortfolio</div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- ========================== -->
+    <!-- HERO SECTION               -->
+    <!-- ========================== -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Hi, I'm <span class="highlight">Alex Johnson</span></h1>
+            <p>Full Stack Developer & UI Designer</p>
+            <a href="#projects" class="btn">View My Work</a>
+        </div>
+    </section>
+
+    <!-- ========================== -->
+    <!-- ABOUT SECTION              -->
+    <!-- ========================== -->
+    <section id="about" class="about">
+        <h2>About Me</h2>
+        <p>
+            I am a passionate full stack developer with experience in building
+            modern web applications. I specialize in Java, Spring Boot, and
+            frontend technologies like HTML, CSS, and JavaScript.
+        </p>
+        <div class="skills">
+            <span class="skill-tag">Java</span>
+            <span class="skill-tag">Spring Boot</span>
+            <span class="skill-tag">Docker</span>
+            <span class="skill-tag">Kubernetes</span>
+            <span class="skill-tag">HTML</span>
+            <span class="skill-tag">CSS</span>
+            <span class="skill-tag">JavaScript</span>
+            <span class="skill-tag">Maven</span>
+        </div>
+    </section>
+
+    <!-- ========================== -->
+    <!-- PROJECTS SECTION           -->
+    <!-- ========================== -->
+    <section id="projects" class="projects">
+        <h2>My Projects</h2>
+        <div class="project-grid" id="project-grid">
+            <!-- Projects loaded dynamically via JS -->
+        </div>
+    </section>
+
+    <!-- ========================== -->
+    <!-- ADD PROJECT FORM           -->
+    <!-- ========================== -->
+    <section class="add-project">
+        <h2>Add New Project</h2>
+        <div class="form-group">
+            <input type="text" id="title" placeholder="Project Title" />
+            <input type="text" id="category" placeholder="Category" />
+            <input type="text" id="techStack" placeholder="Tech Stack" />
+            <textarea id="description" placeholder="Project Description"></textarea>
+            <input type="text" id="liveUrl" placeholder="Live URL" />
+            <button class="btn" onclick="addProject()">Add Project</button>
+        </div>
+    </section>
+
+    <!-- ========================== -->
+    <!-- CONTACT SECTION            -->
+    <!-- ========================== -->
+    <section id="contact" class="contact">
+        <h2>Contact Me</h2>
+        <p>Email: <a href="mailto:alex@example.com">alex@example.com</a></p>
+        <p>GitHub: <a href="https://github.com" target="_blank">github.com/alexjohnson</a></p>
+        <p>LinkedIn: <a href="https://linkedin.com" target="_blank">linkedin.com/in/alexjohnson</a></p>
+    </section>
+
+    <!-- ========================== -->
+    <!-- FOOTER                     -->
+    <!-- ========================== -->
+    <footer>
+        <p>&copy; 2026 Alex Johnson. All rights reserved.</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+
+</body>
+</html>
