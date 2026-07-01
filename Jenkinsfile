@@ -84,18 +84,18 @@ pipeline {
         stage('Deploy to Kubernetes') {
             steps {
                 echo "Deploying application to Kubernetes..."
-                bat 'kubectl apply -f k8s/deployment.yaml --validate=false'
-                bat 'kubectl apply -f k8s/service.yaml --validate=false'
+                bat 'kubectl --kubeconfig="%USERPROFILE%\\.kube\\config" apply -f k8s/deployment.yaml'
+                bat 'kubectl --kubeconfig="%USERPROFILE%\\.kube\\config" apply -f k8s/service.yaml'
             }
         }
 
         stage('Verify Deployment') {
             steps {
                 echo "Checking Deployment..."
-                bat 'kubectl rollout status deployment/portfolio'
-                bat 'kubectl get deployments'
-                bat 'kubectl get pods'
-                bat 'kubectl get svc'
+                bat 'kubectl --kubeconfig="%USERPROFILE%\\.kube\\config" rollout status deployment/portfolio'
+                bat 'kubectl --kubeconfig="%USERPROFILE%\\.kube\\config" get deployments'
+                bat 'kubectl --kubeconfig="%USERPROFILE%\\.kube\\config" get pods'
+                bat 'kubectl --kubeconfig="%USERPROFILE%\\.kube\\config" get svc'
             }
         }
 
