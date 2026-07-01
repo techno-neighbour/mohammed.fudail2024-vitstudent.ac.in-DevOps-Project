@@ -35,7 +35,7 @@ pipeline {
                 bat 'docker --version'
 
                 echo "Verifying Kubernetes..."
-                bat 'kubectl version --client'
+                bat 'kubectl --kubeconfig="C:\\Users\\Admin\\.kube\\config" version --client'
             }
         }
 
@@ -84,18 +84,18 @@ pipeline {
         stage('Deploy to Kubernetes') {
             steps {
                 echo "Deploying application to Kubernetes..."
-                bat 'kubectl --kubeconfig="%USERPROFILE%\\.kube\\config" apply -f k8s/deployment.yaml'
-                bat 'kubectl --kubeconfig="%USERPROFILE%\\.kube\\config" apply -f k8s/service.yaml'
+                bat 'kubectl --kubeconfig="C:\\Users\\Admin\\.kube\\config" apply -f k8s/deployment.yaml'
+                bat 'kubectl --kubeconfig="C:\\Users\\Admin\\.kube\\config" apply -f k8s/service.yaml'
             }
         }
 
         stage('Verify Deployment') {
             steps {
                 echo "Checking Deployment..."
-                bat 'kubectl --kubeconfig="%USERPROFILE%\\.kube\\config" rollout status deployment/portfolio'
-                bat 'kubectl --kubeconfig="%USERPROFILE%\\.kube\\config" get deployments'
-                bat 'kubectl --kubeconfig="%USERPROFILE%\\.kube\\config" get pods'
-                bat 'kubectl --kubeconfig="%USERPROFILE%\\.kube\\config" get svc'
+                bat 'kubectl --kubeconfig="C:\\Users\\Admin\\.kube\\config" rollout status deployment/portfolio'
+                bat 'kubectl --kubeconfig="C:\\Users\\Admin\\.kube\\config" get deployments'
+                bat 'kubectl --kubeconfig="C:\\Users\\Admin\\.kube\\config" get pods'
+                bat 'kubectl --kubeconfig="C:\\Users\\Admin\\.kube\\config" get svc'
             }
         }
 
